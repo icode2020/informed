@@ -11,10 +11,10 @@ def test_health() -> None:
     assert response.json() == {"status": "ok"}
 
 
-def test_status_exposes_unconfigured_auth() -> None:
+def test_status_exposes_auth_boundary() -> None:
     response = client.get("/v1/status")
     assert response.status_code == 200
-    assert response.json()["authentication"] == "not_configured"
+    assert response.json()["authentication"] == "oidc_configuration_required"
 
 
 def test_sensitive_profile_fails_closed() -> None:
