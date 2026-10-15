@@ -1,5 +1,4 @@
 """Authentication boundary tests. Never use real user tokens."""
-import os
 from datetime import datetime, timedelta, timezone
 from types import SimpleNamespace
 from unittest.mock import patch
